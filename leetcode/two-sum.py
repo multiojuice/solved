@@ -1,5 +1,6 @@
 """
 Owen Sullivan
+#1
 for a list of numbers,
 return the two instances that add together 
 to be the given number, target
@@ -16,7 +17,7 @@ def twoSum(nums, target):
         if index1 != numsLength - 1:
             for index2 in range(index1 + 1, numsLength):
                 if nums[index1] + nums[index2] == target:
-                    return index1, index2
+                    return [index1, index2]
             
     return None
 
