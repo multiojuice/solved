@@ -11,11 +11,14 @@ def permute(nums):
       altNums = list(nums)
       altNums.remove(num)
       combos2 = permute(altNums)
-      print('Comb 2',combos2)
-      for combo in combos2:
-        if (type(combo) == 'list'):
-          combos.append([num] + combo)
-        else:
-          combos.append([num, combo])
+
+      if type(combos2[0]) == list:
+        print('in list')
+        for combo in combos2:
+          combo.insert(0,num)
+      else:
+        combos2.insert(0,num)
+      combos.append(combos2)
     return combos
+
 print(permute([1,2,3]))
