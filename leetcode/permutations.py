@@ -13,7 +13,6 @@ def permute(nums):
       combos2 = permute(altNums)
 
       if type(combos2[0]) == list:
-        print('in list')
         for combo in combos2:
           combo.insert(0,num)
       else:
