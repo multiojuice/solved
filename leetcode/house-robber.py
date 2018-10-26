@@ -1,7 +1,5 @@
-dynamicMap = {}
-
 def rob(nums):
-
+    dynamicMap = {}
     for index in range(0, len(nums)):
         dynamicMap[str(index)] = 0
 
