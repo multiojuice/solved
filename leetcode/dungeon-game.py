@@ -28,8 +28,16 @@ def calculateMinimumHP(dungeon):
     print(valueArrs)
 
     for dungeonX in range(dungeon):
-        for dungeoY in range(dungeon[0]):
-            if valueArrs[dungeonX + 1][dungeonY][1] < valueArrs
+        for dungeonY in range(dungeon[0]):
+            differenceRight =  min(valueArrs[dungeonX][dungeonY][0] + dungeon[dungeonX + 1][dungeonY], 0) * -1
+            differenceDown =  min(valueArrs[dungeonX][dungeonY][0] + dungeon[dungeonX][dungeonY + 1], 0) * -1
+            print(difference)
+            if valueArrs[dungeonX + 1][dungeonY][1] > valueArrs[dungeonX][dungeonY][0] + difference:
+                valueArrs[dungeonX + 1][dungeonY][1] = valueArrs[dungeonX][dungeonY][0] + difference
+                if (difference = )
+                valueArrs[dungeonX + 1][dungeonY][0] =
+
+            if valueArrs[dungeonX + 1][dungeonY][1] == valueArrs[dungeonX][dungeonY][0] + difference:
 
 calculateMinimumHP([[-4,2,3],[4,5,6]])
 
