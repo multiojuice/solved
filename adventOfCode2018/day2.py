@@ -1,0 +1,34 @@
+def scanIds(fileName):
+  twoLettered = 0
+  threeLettered = 0
+
+  with open(fileName) as file:
+    # go through each line in the file
+    for line in file:
+      foundTwo = False
+      foundThree = False
+      letterDict = {}
+
+      # Go through each char in the lines string
+      for char in line:
+        if char not in letterDict:
+          letterDict[char] = 1
+        else:
+          letterDict[char] += 1
+      
+      # go through the values in the dictionary and look
+      # for a two and three
+      for value in letterDict.values():
+        if value == 2 and not foundTwo:
+          twoLettered += 1
+          foundTwo = True
+        if value == 3 and not foundThree:
+          threeLettered += 1
+          foundThree = True
+        if foundTwo and foundThree:
+          break
+  
+  return twoLettered * threeLettered
+
+
+print(scanIds('data/day2.txt'))
