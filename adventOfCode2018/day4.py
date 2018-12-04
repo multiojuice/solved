@@ -45,14 +45,13 @@ def partOne(fileName):
       if guardDict[guardId][timeKey] > localHigh:
         localHigh = guardDict[guardId][timeKey]
         localMinute = timeKey
-    print(total)
     if total > highest:
         highest = total
         highestId = guardId
         highestMinute = localMinute
   print(highest, highestId, highestMinute)
 
-  def partTwo(fileName):
+def partTwo(fileName):
   instructions = []
   instructionsDict = {}
   with open(fileName) as file:
@@ -79,7 +78,6 @@ def partOne(fileName):
       hour = lastTime.split(':')[0]
       minute = lastTime.split(':')[1]
       currentMinute = originalString[12:17].split(':')[1]
-      print(currentMinute)
       for index in range(int(minute), int(currentMinute)):
         if str(index) in guardDict[currentGuard]:
           guardDict[currentGuard][str(index)] += 1
@@ -96,8 +94,8 @@ def partOne(fileName):
         highestId = guardId
         highestMinute = timeKey
 
-  print(guardDict)
-
   print(highest, highestId, highestMinute)
 
-print(partOne('data/day4.txt'))
+partOne('data/day4.txt')
+partTwo('data/day4.txt')
+
