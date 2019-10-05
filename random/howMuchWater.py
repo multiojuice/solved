@@ -18,12 +18,14 @@ def howMuch(arr):
     height = stack.pop()
     while (len(stack) != 0):
         if (len(stack) >= 2):
-            total += min([height-stack[-1], stack[0]-stack[-1]])
+            if (stack[-1] <= height):
+                total += min([height-stack[-1], stack[0]-stack[-1]])
+            else:
+                height = stack[-1]
         stack.pop()
-
 
     print(total)
 
 
-howMuch([3,1,2,1,3])
+howMuch([4,3,2,1,2,5,3,2,3])
 
