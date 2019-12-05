@@ -7,6 +7,7 @@ def rats():
         components = line.split(' ')
         iterations = int(components[1])
         total = int(components[2])
+        tab[str(total)] = total
         for i in range(0,iterations - 1):
             y = 0
             x = total
